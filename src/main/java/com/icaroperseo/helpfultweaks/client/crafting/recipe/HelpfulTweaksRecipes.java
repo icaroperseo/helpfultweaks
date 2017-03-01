@@ -24,6 +24,10 @@ public class HelpfulTweaksRecipes {
         if (ConfigHandler.enableFlintRecipe) {
             addFlintRecipe();
         }
+
+        if (ConfigHandler.enableLeatherRecipe) {
+            addLeatherRecipe();
+        }
     }
 
     private static void addSlimeBallRecipe() {
@@ -40,5 +44,9 @@ public class HelpfulTweaksRecipes {
 
     private static void addFlintRecipe() {
         GameRegistry.addSmelting(Blocks.GRAVEL, new ItemStack(Items.FLINT), 0.35f);
+    }
+
+    private static void addLeatherRecipe() {
+        GameRegistry.addSmelting(Items.ROTTEN_FLESH, new ItemStack(Items.LEATHER), 0.35f);
     }
 }

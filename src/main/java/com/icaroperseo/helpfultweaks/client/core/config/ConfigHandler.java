@@ -16,6 +16,7 @@ public class ConfigHandler {
     public static boolean enableCharcoalRecipe;
     public static boolean enableFlintRecipe;
     public static boolean enableSlimeBallRecipe;
+    public static boolean enableLeatherRecipe;
 
     public static final String CATEGORY_NAME_RECIPES = "Recipes";
     public static final String CATEGORY_NAME_SMELTING = "Smelting";
@@ -49,6 +50,10 @@ public class ConfigHandler {
         Property propEnableFlintRecipe = config.get(CATEGORY_NAME_SMELTING, "enableFlintRecipe",
                 ENABLE_FLINT_RECIPE_DEFAULT_VALUE, "Enables smelting gravel to flint.");
 
+        final boolean ENABLE_LEATHER_RECIPE_DEFAULT_VALUE = true;
+        Property propEnableLeatherRecipe = config.get(CATEGORY_NAME_SMELTING, "enableLeatherRecipe",
+                ENABLE_LEATHER_RECIPE_DEFAULT_VALUE, "Enables smelting rotten flesh to leather.");
+
         List<String> propOrderRecipes = new ArrayList<String>();
 
         propOrderRecipes.add(propEnableSlimeBallRecipe.getName());
@@ -58,6 +63,7 @@ public class ConfigHandler {
 
         propOrderSmelting.add(propEnableCharcoalRecipe.getName());
         propOrderSmelting.add(propEnableFlintRecipe.getName());
+        propOrderSmelting.add(propEnableLeatherRecipe.getName());
         config.setCategoryPropertyOrder(CATEGORY_NAME_SMELTING, propOrderSmelting);
 
         /**
@@ -66,6 +72,7 @@ public class ConfigHandler {
         enableSlimeBallRecipe = propEnableSlimeBallRecipe.getBoolean(ENABLE_SLIME_BALL_RECIPE_DEFAULT_VALUE);
         enableCharcoalRecipe = propEnableCharcoalRecipe.getBoolean(ENABLE_CHARCOAL_RECIPE_DEFAULT_VALUE);
         enableFlintRecipe = propEnableFlintRecipe.getBoolean(ENABLE_FLINT_RECIPE_DEFAULT_VALUE);
+        enableLeatherRecipe = propEnableLeatherRecipe.getBoolean(ENABLE_LEATHER_RECIPE_DEFAULT_VALUE);
 
         /**
          * write the class's variables back into the config properties and save to disk.
@@ -76,6 +83,7 @@ public class ConfigHandler {
         propEnableSlimeBallRecipe.set(enableSlimeBallRecipe);
         propEnableCharcoalRecipe.set(enableCharcoalRecipe);
         propEnableFlintRecipe.set(enableFlintRecipe);
+        propEnableLeatherRecipe.set(enableLeatherRecipe);
 
         if (config.hasChanged()) {
             config.save();
