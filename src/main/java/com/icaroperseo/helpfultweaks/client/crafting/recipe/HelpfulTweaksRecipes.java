@@ -28,6 +28,14 @@ public class HelpfulTweaksRecipes {
         if (ConfigHandler.enableLeatherRecipe) {
             addLeatherRecipe();
         }
+
+        if (ConfigHandler.enableStringRecipe) {
+            addStringRecipe();
+        }
+
+        if (ConfigHandler.enableWebRecipe) {
+            addWebRecipe();
+        }
     }
 
     private static void addSlimeBallRecipe() {
@@ -48,5 +56,17 @@ public class HelpfulTweaksRecipes {
 
     private static void addLeatherRecipe() {
         GameRegistry.addSmelting(Items.ROTTEN_FLESH, new ItemStack(Items.LEATHER), 0.35f);
+    }
+
+    private static void addStringRecipe() {
+        ItemStack web = new ItemStack(Blocks.WEB);
+
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.STRING), web);
+    }
+
+    private static void addWebRecipe() {
+        ItemStack string = new ItemStack(Items.STRING);
+
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.WEB), string);
     }
 }
