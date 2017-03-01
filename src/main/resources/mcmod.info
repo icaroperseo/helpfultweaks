@@ -1,0 +1,16 @@
+[
+{
+  "modid": "helpfultweaks",
+  "name": "Helpful Tweaks",
+  "description": "Mod for Minecraft to allow crafting and smelting vanilla items.",
+  "version": "1.2.0",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Icaro Perseo"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
