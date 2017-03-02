@@ -27,7 +27,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.53847839"
-     inkscape:cx="502.32364"
+     inkscape:cx="127.19252"
      inkscape:cy="452.7926"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -57,7 +57,9 @@
      transform="translate(0,-81.1)">
     <g
        id="g4564"
-       transform="translate(6.8043882,19.386582)">
+       transform="translate(6.8043882,19.386582)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          ry="7.736783"
          y="116.33145"
