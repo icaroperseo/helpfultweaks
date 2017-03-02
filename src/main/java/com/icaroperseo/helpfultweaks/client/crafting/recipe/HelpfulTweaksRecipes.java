@@ -7,7 +7,6 @@ package com.icaroperseo.helpfultweaks.client.crafting.recipe;
 import com.icaroperseo.helpfultweaks.client.core.config.ConfigHandler;
 import net.minecraft.init.Items;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -45,12 +44,28 @@ public class HelpfulTweaksRecipes {
         if (ConfigHandler.enableGunpowderRecipe) {
             addGunpowderRecipe();
         }
+
+        if (ConfigHandler.enableNetherWartRecipe) {
+            addNetherWartRecipe();
+        }
+
+        if (ConfigHandler.enableNetherQuartzRecipe) {
+            addNetherQuartzRecipe();
+        }
+
+        if (ConfigHandler.enablePrismarineCrystalRecipe) {
+            addPrismarineCrystalRecipe();
+        }
+
+        if (ConfigHandler.enablePrismarineShardRecipe) {
+            addPrismarineShardRecipe();
+        }
     }
 
     private static void addSlimeBallRecipe() {
         ItemStack clayBall = new ItemStack(Items.CLAY_BALL);
         ItemStack sugar = new ItemStack(Items.SUGAR);
-        ItemStack greenDye = new ItemStack(Items.DYE, 1, 2);
+        ItemStack greenDye = new ItemStack(Items.DYE, 1, 2);    // Cactus green
 
         GameRegistry.addShapelessRecipe(new ItemStack(Items.SLIME_BALL), clayBall, sugar, greenDye);
     }
@@ -88,7 +103,7 @@ public class HelpfulTweaksRecipes {
                 "YRY",
                 "NYN",
                 'N', Items.GOLD_NUGGET,
-                'Y', new ItemStack(Items.DYE, 1 , 11),
+                'Y', new ItemStack(Items.DYE, 1 , 11),  // Dandelion yellow
                 'R', Items.REDSTONE
         });
     }
@@ -99,9 +114,57 @@ public class HelpfulTweaksRecipes {
                 "SFS",
                 "CHC",
                 'C', Items.CLAY_BALL,
-                'H', new ItemStack(Items.COAL, 1, 1),
+                'H', new ItemStack(Items.COAL, 1, 1),   // Charcoal
                 'S', Items.SUGAR,
                 'F', Items.FLINT
+        });
+    }
+
+    private static void addNetherWartRecipe() {
+        GameRegistry.addRecipe(new ItemStack(Items.NETHER_WART), new Object[] {
+                ".B.",
+                "FDF",
+                ".B.",
+                'B', new ItemStack(Items.DYE, 1, 15),   // Bone meal
+                'F', Items.FERMENTED_SPIDER_EYE,
+                'D', new ItemStack(Blocks.DEADBUSH)
+        });
+    }
+
+    private static void addNetherQuartzRecipe() {
+        GameRegistry.addRecipe(new ItemStack(Items.QUARTZ), new Object[] {
+                "DAD",
+                "BSB",
+                "DAD",
+                'A', new ItemStack(Blocks.STONE, 1, 5), // Andesite
+                'D', new ItemStack(Blocks.STONE,1, 3),  // Diorite
+                'B', new ItemStack(Items.DYE, 1, 15),   // Bone meal
+                'S', Items.SUGAR
+
+        });
+    }
+
+    private static void addPrismarineCrystalRecipe() {
+        GameRegistry.addRecipe(new ItemStack(Items.PRISMARINE_CRYSTALS, 2), new Object[] {
+                "LSL",
+                "RGR",
+                "LSL",
+                'L', new ItemStack(Items.DYE, 1, 4),    // Lapis lazuli
+                'S', Items.SUGAR,
+                'R', Items.REDSTONE,
+                'G', Items.GLOWSTONE_DUST
+        });
+    }
+
+    private static void addPrismarineShardRecipe() {
+        GameRegistry.addRecipe(new ItemStack(Items.PRISMARINE_SHARD, 2), new Object[] {
+                "CLC",
+                "QAQ",
+                "CLC",
+                'C', new ItemStack(Blocks.COBBLESTONE),
+                'L', new ItemStack(Items.DYE, 1, 4),    // Lapis lazuli
+                'Q', Items.QUARTZ,
+                'A', new ItemStack(Blocks.STONE, 1, 5), // Andesite
         });
     }
 }

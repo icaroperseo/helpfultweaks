@@ -4,60 +4,90 @@
 
 Mod for Minecraft to allow crafting and smelting vanilla items.
 
-All options are fully configurable (enable/disable). Take a look the config file: `helpfultweaks.cfg`.
+All options are fully configurable (enable/disable). Take a look into the config file: `helpfultweaks.cfg`.
 
-Current crafting and smelting recipes:
+**Current crafting and smelting recipes**
 
-+ Slime ball.
-+ Web.
-+ String.
-+ Glowstone.
-+ Gunpowder.
-+ Charcoal.
-+ Flint.
-+ Leather.
++ Slime ball
++ Web
++ String
++ Glowstone
++ Gunpowder
++ Nether Wart
++ Nether Quartz
++ Prismarine Crystal (x2)
++ Prismarine Shard (x2)
++ Charcoal
++ Flint
++ Leather
 
-## Recipes
+All recipes are available through [Just Enough Items](https://minecraft.curseforge.com/projects/just-enough-items-jei) (JEI).
 
-### Crafting
+---
 
-#### Slime Ball
+## Crafting
+
+### Slime Ball
 
 ![](doc/img/slimeball_recipe.jpg)
 
-#### Web
+### Web
 
 ![](doc/img/web_recipe.jpg)
 
-#### String
+### String
 
 ![](doc/img/string_recipe.jpg)
 
-#### Glowstone
+### Glowstone
 
 ![](doc/img/glowstone_recipe.jpg)
 
-#### Gunpowder
+### Gunpowder
 
 ![](doc/img/gunpowder_recipe.jpg)
 
-### Smelting
+### Nether Wart
 
-#### Charcoal
+![](doc/img/netherwart_recipe.jpg)
+
+### Nether Quartz
+
+![](doc/img/netherquartz_recipe.jpg)
+
+### Prismarine Crystal (x2)
+
+![](doc/img/prismarinecrystal_recipe.jpg)
+
+### Prismarine Shard (x2)
+
+![](doc/img/prismarineshard_recipe.jpg)
+
+---
+
+## Smelting
+
+### Charcoal
 
 ![](doc/img/charcoal_recipe.jpg)
 
-#### Flint
+### Flint
 
 ![](doc/img/flint_recipe.jpg)
 
-#### Leather
+### Leather
 
 ![](doc/img/leather_recipe.jpg)
 
-----
+---
 
 ## License
 
 This software is licensed under the MIT license.
+
+---
+
+## Feedback
+
+Any suggestion is welcome!
 

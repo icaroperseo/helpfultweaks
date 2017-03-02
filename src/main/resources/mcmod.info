@@ -3,7 +3,7 @@
   "modid": "helpfultweaks",
   "name": "Helpful Tweaks",
   "description": "Mod for Minecraft to allow crafting and smelting vanilla items.",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",

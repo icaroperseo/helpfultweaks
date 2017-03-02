@@ -21,6 +21,10 @@ public class ConfigHandler {
     public static boolean enableWebRecipe;
     public static boolean enableGlowstoneRecipe;
     public static boolean enableGunpowderRecipe;
+    public static boolean enableNetherWartRecipe;
+    public static boolean enableNetherQuartzRecipe;
+    public static boolean enablePrismarineCrystalRecipe;
+    public static boolean enablePrismarineShardRecipe;
 
     public static final String CATEGORY_NAME_RECIPES = "Recipes";
     public static final String CATEGORY_NAME_SMELTING = "Smelting";
@@ -74,6 +78,22 @@ public class ConfigHandler {
         Property propEnableGunpowderRecipe = config.get(CATEGORY_NAME_RECIPES, "enableGunpowderRecipe",
                 ENABLE_GUNPOWDER_RECIPE_DEFAULT_VALUE, "Enables gunpowder recipe.");
 
+        final boolean ENABLE_NETHER_WART_RECIPE_DEFAULT_VALUE = true;
+        Property propEnableNetherWartRecipe = config.get(CATEGORY_NAME_RECIPES, "enableNetherWartRecipe",
+                ENABLE_NETHER_WART_RECIPE_DEFAULT_VALUE, "Enables nether wart recipe.");
+
+        final boolean ENABLE_NETHER_QUARTZ_RECIPE_DEFAULT_VALUE = true;
+        Property propEnableNetherQuartzRecipe = config.get(CATEGORY_NAME_RECIPES, "enableNetherQuartzRecipe",
+                ENABLE_NETHER_QUARTZ_RECIPE_DEFAULT_VALUE, "Enables nether quartz recipe.");
+
+        final boolean ENABLE_PRISMARINE_CRYSTAL_RECIPE_DEFAULT_VALUE = true;
+        Property propEnablePrismarineCrystalRecipe = config.get(CATEGORY_NAME_RECIPES, "enablePrismarineCrystalRecipe",
+                ENABLE_PRISMARINE_CRYSTAL_RECIPE_DEFAULT_VALUE, "Enables prismarine crystal recipe.");
+
+        final boolean ENABLE_PRISMARINE_SHARD_RECIPE_DEFAULT_VALUE = true;
+        Property propEnablePrismarineShardRecipe = config.get(CATEGORY_NAME_RECIPES, "enablePrismarineShardRecipe",
+                ENABLE_PRISMARINE_SHARD_RECIPE_DEFAULT_VALUE, "Enables prismarine shard recipe.");
+
         List<String> propOrderRecipes = new ArrayList<String>();
 
         propOrderRecipes.add(propEnableSlimeBallRecipe.getName());
@@ -81,6 +101,10 @@ public class ConfigHandler {
         propOrderRecipes.add(propEnableWebRecipe.getName());
         propOrderRecipes.add(propEnableGlowstoneRecipe.getName());
         propOrderRecipes.add(propEnableGunpowderRecipe.getName());
+        propOrderRecipes.add(propEnableNetherWartRecipe.getName());
+        propOrderRecipes.add(propEnableNetherQuartzRecipe.getName());
+        propOrderRecipes.add(propEnablePrismarineCrystalRecipe.getName());
+        propOrderRecipes.add(propEnablePrismarineShardRecipe.getName());
         config.setCategoryPropertyOrder(CATEGORY_NAME_RECIPES, propOrderRecipes);
 
         List<String> propOrderSmelting = new ArrayList<String>();
@@ -101,6 +125,12 @@ public class ConfigHandler {
         enableWebRecipe = propEnableWebRecipe.getBoolean(ENABLE_WEB_RECIPE_DEFAULT_VALUE);
         enableGlowstoneRecipe = propEnableGlowstoneRecipe.getBoolean(ENABLE_GLOWSTONE_RECIPE_DEFAULT_VALUE);
         enableGunpowderRecipe = propEnableGunpowderRecipe.getBoolean(ENABLE_GUNPOWDER_RECIPE_DEFAULT_VALUE);
+        enableNetherWartRecipe = propEnableNetherWartRecipe.getBoolean(ENABLE_NETHER_WART_RECIPE_DEFAULT_VALUE);
+        enableNetherQuartzRecipe = propEnableNetherQuartzRecipe.getBoolean(ENABLE_NETHER_QUARTZ_RECIPE_DEFAULT_VALUE);
+        enablePrismarineCrystalRecipe =
+                propEnablePrismarineCrystalRecipe.getBoolean(ENABLE_PRISMARINE_CRYSTAL_RECIPE_DEFAULT_VALUE);
+        enablePrismarineShardRecipe =
+                propEnablePrismarineShardRecipe.getBoolean(ENABLE_PRISMARINE_SHARD_RECIPE_DEFAULT_VALUE);
 
         /**
          * Write the class's variables back into the config properties and save to disk.
@@ -116,6 +146,10 @@ public class ConfigHandler {
         propEnableWebRecipe.set(enableWebRecipe);
         propEnableGlowstoneRecipe.set(enableGlowstoneRecipe);
         propEnableGunpowderRecipe.set(enableGunpowderRecipe);
+        propEnableNetherWartRecipe.set(enableNetherWartRecipe);
+        propEnableNetherQuartzRecipe.set(enableNetherQuartzRecipe);
+        propEnablePrismarineCrystalRecipe.set(enablePrismarineCrystalRecipe);
+        propEnablePrismarineShardRecipe.set(enablePrismarineShardRecipe);
 
         if (config.hasChanged()) {
             config.save();
