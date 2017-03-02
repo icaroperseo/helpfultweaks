@@ -65,8 +65,11 @@ public class HelpfulTweaksRecipes {
     }
 
     private static void addWebRecipe() {
-        ItemStack string = new ItemStack(Items.STRING);
-
-        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.WEB), string);
+        GameRegistry.addRecipe(new ItemStack(Blocks.WEB), new Object[] {
+                "S.S",
+                ".S.",
+                "S.S",
+                'S', Items.STRING
+        });
     }
 }
