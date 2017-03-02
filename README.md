@@ -1,4 +1,4 @@
-# Helpful Tweaks
+# Helpful Tweaks (MC 1.10.2)
 
 ![](doc/assets/logo.png)
 
