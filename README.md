@@ -4,7 +4,7 @@
 
 Mod for Minecraft to allow crafting and smelting vanilla items.
 
-All options are fully configurable (enable/disable). Take a look the config file: `Helpfultweaks.cfg`.
+All options are fully configurable (enable/disable). Take a look the config file: `helpfultweaks.cfg`.
 
 ## Recipes
 
