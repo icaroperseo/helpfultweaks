@@ -19,6 +19,8 @@ public class ConfigHandler {
     public static boolean enableLeatherRecipe;
     public static boolean enableStringRecipe;
     public static boolean enableWebRecipe;
+    public static boolean enableGlowstoneRecipe;
+    public static boolean enableGunpowderRecipe;
 
     public static final String CATEGORY_NAME_RECIPES = "Recipes";
     public static final String CATEGORY_NAME_SMELTING = "Smelting";
@@ -64,11 +66,21 @@ public class ConfigHandler {
         Property propEnableLeatherRecipe = config.get(CATEGORY_NAME_SMELTING, "enableLeatherRecipe",
                 ENABLE_LEATHER_RECIPE_DEFAULT_VALUE, "Enables smelting rotten flesh to leather.");
 
+        final boolean ENABLE_GLOWSTONE_RECIPE_DEFAULT_VALUE = true;
+        Property propEnableGlowstoneRecipe = config.get(CATEGORY_NAME_RECIPES, "enableGlowstoneRecipe",
+                ENABLE_GLOWSTONE_RECIPE_DEFAULT_VALUE, "Enables glowstone recipe.");
+
+        final boolean ENABLE_GUNPOWDER_RECIPE_DEFAULT_VALUE = true;
+        Property propEnableGunpowderRecipe = config.get(CATEGORY_NAME_RECIPES, "enableGunpowderRecipe",
+                ENABLE_GUNPOWDER_RECIPE_DEFAULT_VALUE, "Enables gunpowder recipe.");
+
         List<String> propOrderRecipes = new ArrayList<String>();
 
         propOrderRecipes.add(propEnableSlimeBallRecipe.getName());
         propOrderRecipes.add(propEnableStringRecipe.getName());
         propOrderRecipes.add(propEnableWebRecipe.getName());
+        propOrderRecipes.add(propEnableGlowstoneRecipe.getName());
+        propOrderRecipes.add(propEnableGunpowderRecipe.getName());
         config.setCategoryPropertyOrder(CATEGORY_NAME_RECIPES, propOrderRecipes);
 
         List<String> propOrderSmelting = new ArrayList<String>();
@@ -87,9 +99,11 @@ public class ConfigHandler {
         enableFlintRecipe = propEnableFlintRecipe.getBoolean(ENABLE_FLINT_RECIPE_DEFAULT_VALUE);
         enableLeatherRecipe = propEnableLeatherRecipe.getBoolean(ENABLE_LEATHER_RECIPE_DEFAULT_VALUE);
         enableWebRecipe = propEnableWebRecipe.getBoolean(ENABLE_WEB_RECIPE_DEFAULT_VALUE);
+        enableGlowstoneRecipe = propEnableGlowstoneRecipe.getBoolean(ENABLE_GLOWSTONE_RECIPE_DEFAULT_VALUE);
+        enableGunpowderRecipe = propEnableGunpowderRecipe.getBoolean(ENABLE_GUNPOWDER_RECIPE_DEFAULT_VALUE);
 
         /**
-         * write the class's variables back into the config properties and save to disk.
+         * Write the class's variables back into the config properties and save to disk.
          *
          * This is done because some of the properties may have been assigned default values if the file was empty or
          * corrupt.
@@ -100,14 +114,12 @@ public class ConfigHandler {
         propEnableFlintRecipe.set(enableFlintRecipe);
         propEnableLeatherRecipe.set(enableLeatherRecipe);
         propEnableWebRecipe.set(enableWebRecipe);
+        propEnableGlowstoneRecipe.set(enableGlowstoneRecipe);
+        propEnableGunpowderRecipe.set(enableGunpowderRecipe);
 
         if (config.hasChanged()) {
             config.save();
         }
-    }
-
-    private static void setDefaultValuesForConfigFile () {
-
     }
 
     private static Configuration config = null;

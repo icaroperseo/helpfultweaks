@@ -7,6 +7,7 @@ package com.icaroperseo.helpfultweaks.client.crafting.recipe;
 import com.icaroperseo.helpfultweaks.client.core.config.ConfigHandler;
 import net.minecraft.init.Items;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -35,6 +36,14 @@ public class HelpfulTweaksRecipes {
 
         if (ConfigHandler.enableWebRecipe) {
             addWebRecipe();
+        }
+
+        if (ConfigHandler.enableGlowstoneRecipe) {
+            addGlowstoneRecipe();
+        }
+
+        if (ConfigHandler.enableGunpowderRecipe) {
+            addGunpowderRecipe();
         }
     }
 
@@ -70,6 +79,29 @@ public class HelpfulTweaksRecipes {
                 ".S.",
                 "S.S",
                 'S', Items.STRING
+        });
+    }
+
+    private static void addGlowstoneRecipe() {
+        GameRegistry.addRecipe(new ItemStack(Items.GLOWSTONE_DUST), new Object[] {
+                "NYN",
+                "YRY",
+                "NYN",
+                'N', Items.GOLD_NUGGET,
+                'Y', new ItemStack(Items.DYE, 1 , 11),
+                'R', Items.REDSTONE
+        });
+    }
+
+    private static void addGunpowderRecipe() {
+        GameRegistry.addRecipe(new ItemStack(Items.GUNPOWDER), new Object[] {
+                "CHC",
+                "SFS",
+                "CHC",
+                'C', Items.CLAY_BALL,
+                'H', new ItemStack(Items.COAL, 1, 1),
+                'S', Items.SUGAR,
+                'F', Items.FLINT
         });
     }
 }
